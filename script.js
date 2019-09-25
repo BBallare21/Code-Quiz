@@ -2,10 +2,11 @@
   let score = 0;
   let current = 0;
   let secondsLeft = 75;
+  let timerInterval;
 
    //Setting the timer
   function setTime() {
-    let timerInterval = setInterval(function() {  
+    timerInterval = setInterval(function() {  
       secondsLeft--;
       timeEl.textContent = `${secondsLeft} seconds remaining`;
   
@@ -71,12 +72,20 @@
 
   //Display the results from the game  
   function displayResult() {
-      let result =
-      `<p>Game Over!</p>
-      <p>You got ${score} correct!</p>
+      // grab current value of time (finalTime)
+      // clear timers
+      // set timer location value to finalTime
+      let result = $('.time').text();
+      console.log("RESULT", result);
+      clearInterval(timerInterval)
+      let [finalTime] = result.split(' '); 
+      $('.time').innerText = `Final Time: ${finalTime}`;
+      
+     let gameOver = `<p>Game Over!</p>
+      <p>You got ${finalTime} correct!</p>
       <button class='btn btn-primary' id='reset'>Reset Game</button>`;
 
-      $('#game').html(result);
+      $('#game').html(gameOver);
   }
   
   //Activate the reset game button
