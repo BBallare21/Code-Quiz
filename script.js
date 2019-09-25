@@ -16,6 +16,7 @@
       }, 1000);
   }
 
+  //setting start button to display questions when clicked.
   $('#start').on('click', function() {
     setTime();
     $('.dissapear').hide();
@@ -31,6 +32,7 @@
       `);
   }
 
+  //Pull the choices from the array
   function getChoices(choices) {
       let result = '';
       for (let i = 0; i < choices.length; i++) {
@@ -54,6 +56,7 @@
       }
   })
 
+  //Get the next question when the user response is recorded
   function nextQuest() {
     let isGameOver = (questions.length - 1) === current;
     if (isGameOver) {
@@ -66,6 +69,7 @@
     }
 }
 
+  //Display the results from the game  
   function displayResult() {
       let result =
       `<p>Game Over!</p>
@@ -75,6 +79,7 @@
       $('#game').html(result);
   }
   
+  //Activate the reset game button
   $(document).on('click', '#reset', function () {
     score = 0;
     current = 0;
@@ -83,6 +88,7 @@
     getQuestions()
   })
 
+  //Set the local storage to hold the score and user name
   localStorage.setItem('score', score)
 
   
