@@ -1,0 +1,22 @@
+.card {
+    width: 760px;
+    margin: auto;
+}
+
+.choice {
+    border: 1px solid purple;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    width: 250px;
+    background-color: purple;
+    color: white;
+    margin-top: 10px;
+}
+
+#reset {
+    border: 1px solid blue;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+}
