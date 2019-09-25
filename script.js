@@ -82,7 +82,8 @@
       $('.time').innerText = `Final Time: ${finalTime}`;
       
      let gameOver = `<p>Game Over!</p>
-      <p>You got ${finalTime} correct!</p>
+      <p>Your score is ${finalTime}</p>
+      <p>You got ${score} questions right!</p>
       <button class='btn btn-primary' id='reset'>Reset Game</button>`;
 
       $('#game').html(gameOver);
